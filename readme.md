@@ -11,8 +11,18 @@
 
 
 ### OOP Characteristics
-- Abstraction
-- Encapsulation
-- Inheritance
-- Polymorphism
+- Abstraction  
+  membuat hal yang kompleks menjadi simple  
+  Contoh dalam class Character adalah ketika menjalakan method attack
+  kita langsung mendapatkan jumlah attack tanpa perlu memikirkan statnya   
+  
+- Encapsulation   
+  Menyembunyikan attributes   
+  Contoh di dalam constructor
+
+- Inheritance   
+  Konsep dimana suatu class memperoleh attributes dan methods dari class yang sudah ada
+
+- Polymorphism    
+  Melakukan sebuah methods dengan bentuk/hasil yang berbeda 
 
