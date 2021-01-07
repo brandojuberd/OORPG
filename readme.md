@@ -24,5 +24,16 @@
   Konsep dimana suatu class memperoleh attributes dan methods dari class yang sudah ada
 
 - Polymorphism    
-  Melakukan sebuah methods dengan bentuk/hasil yang berbeda 
+  Melakukan sebuah methods dengan bentuk/hasil yang berbeda
 
+### Class Relationship 
+- Aggregation   
+  Class A berisikan Class B   
+  Contoh: Dungeon dapat diisi oleh players 
+- Composition
+  Class A mempunyai Class B
+  Contoh: Dungeon mempunyai Dungeon Master
+
+
+v1.0: Dungeon and Players Class
+v1.01: readme update
