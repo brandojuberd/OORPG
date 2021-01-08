@@ -1,32 +1,32 @@
 class Character{
-  constructor(name, job){
+  constructor(name, job, weapon, attributes = {}){
     this._name= name;
-    this._weapon= "Sword";
+    this._weapon= weapon || "Sword";
     this._job= job || "Swordsman";
-    this._healthPoints= 100;
     this._level= 1;
-    this._attributePoint = 0;
-    this._strength= 3;
-    this._intelligence= 1;
-    this._agility= 1;
+    this._attributes={
+      hp:  attributes.hp || 100 ,
+      strength: attributes.str || 3,
+      intelligence: attributes.int || 1,
+      agility: attributes.agi || 1
+    }
   }
   get name(){
-    return this._name
+    return this._name;
   }
-  get hp(){
-    return this._healthPoints
+  get attributes(){
+    return this._attributes;
   }
-  set hp(value){
-    this._healthPoints = value
-    console.log(`${this._name}, HP: ${this._healthPoints}`)
-    return this._healthPoints
+  set attributes(value){
+    this._attributes.hp = value;
+    return this._attributes.hp
   }
   greetings(){
     return `My name is ${this._name}, I'm a ${this._job}`;
   }
 
   attack(){     
-    let totalAttack = this._strength + this._agility;
+    let totalAttack = this._attributes.strength + this._attributes.agility;
     console.log("Flash Slash!!");
     return totalAttack;
   }
@@ -35,15 +35,11 @@ class Character{
 
 class WhiteMage extends Character{
   constructor(name){
-    super(name, "WhiteMage")
-    this._weapon = "Healing Staff"
-    this._strength = 1;
-    this._intelligence = 2;
-    this._agility = 2;
+    super(name, "WhiteMage", "Healing Staff", {hp: 100, agi: 2, int: 2, str: 1})
   }
 
   attack(){
-    let totalAttack = this._intelligence + this._agility;
+    let totalAttack = this._attributes.intelligence + this._attributes.agility;
     console.log("Holy!!");
     return totalAttack;
   }
@@ -51,14 +47,10 @@ class WhiteMage extends Character{
 
 class Wizard extends Character{
   constructor(name){
-    super(name, "Wizard")
-    this._weapon = "Black Staff"
-    this._strength = 1;
-    this._intelligence = 4;
-    this._agility = 1;
+    super(name, "Wizard", "Black Staff", {hp: 100, agi: 1, int: 4, str: 1})
   }
   attack(){     
-    let totalAttack = this._intelligence * 2 + this._agility;
+    let totalAttack = this._attributes.intelligence * 2 + this._attributes.agility;
     console.log("EXPLOSIONNNNN!!!!!");
     return totalAttack;
   }
@@ -67,6 +59,9 @@ class Wizard extends Character{
 
 class Paladin extends Character{
 }
+
+let brando = new Character("brando", "Swordsman", "Black Sword", {hp: 120})
+console.log(brando);
 
 module.exports = {Character, Paladin, Wizard, WhiteMage}
 
